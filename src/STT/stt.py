@@ -21,7 +21,7 @@ def listen():
     with sr.Microphone() as source:
         print("Listening... (6s max)")
         try:
-            audio = r.listen(source, timeout=1, phrase_time_limit=6)
+            audio = r.listen(source, phrase_time_limit=6)
             print("Processing input...")
             text = r.recognize_google(audio)
             print("You said:", text)
