@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: gemini-audio-app
+    env: python
+    plan: free
+    region: oregon
+
+    buildCommand: |
+      apt-get update && apt-get install -y ffmpeg
+      pip install --upgrade pip
+      pip install -r requirements.txt
+
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false

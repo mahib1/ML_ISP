@@ -1,3 +1,8 @@
 venv/
 venv_py311/
 requirements.txt
+venv/
+__pycache__/
+*.pyc
+.env
+uploads/

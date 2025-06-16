@@ -19,9 +19,9 @@ def speak(text):
 
 def listen():
     with sr.Microphone() as source:
-        print("Listening... (6s max)")
+        print("Listening... (10s max)")
         try:
-            audio = r.listen(source, phrase_time_limit=6)
+            audio = r.listen(source, phrase_time_limit=10)
             print("Processing input...")
             text = r.recognize_google(audio)
             print("You said:", text)
