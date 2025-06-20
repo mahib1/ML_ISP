@@ -28,7 +28,7 @@ GOOGLE_API_KEY = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel(
     'gemini-1.5-flash',
-    system_instruction="Do not use any Markdown or special formatting characters like *, #, -, etc. in your responses. Respond in plain English text only."
+    system_instruction="Do not use any Markdown or special formatting characters like *, #, -, etc. in your responses. Respond in plain hindi text only."
 )
 
 def process_audio_file(file):
@@ -74,7 +74,7 @@ def process_audio_file(file):
         wav_path = os.path.join(temp_dir, 'response.wav')
 
         print("Saving TTS audio to:", mp3_path)
-        tts = gTTS(text=gemini_response, lang='en')
+        tts = gTTS(text=gemini_response, lang='hi')
         tts.save(mp3_path)
 
         # Convert to WAV using pydub
